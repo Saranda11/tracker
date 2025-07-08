@@ -1,0 +1,6 @@
+@echo off
+echo Starting Expense Tracker Backend Server...
+cd /d "C:\Users\ccc\Desktop\tracker\api"
+echo Backend starting on port 5000...
+npm run dev
+pause 

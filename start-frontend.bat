@@ -1,0 +1,6 @@
+@echo off
+echo Starting Expense Tracker Frontend Server...
+cd /d "C:\Users\ccc\Desktop\tracker\front"
+echo Frontend starting on port 3000...
+npm run dev
+pause 
