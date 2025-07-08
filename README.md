@@ -160,7 +160,7 @@ start-frontend.bat
 6. Middleware verifikon token-in për çdo route të mbrojtur
 ```
 
-## 🔍 Sistemi i Zbulimit të Mashtrimit
+## Sistemi i Zbulimit të Mashtrimit
 
 ### Algoritmat e Kontrollit
 
@@ -209,7 +209,7 @@ if (përshkrimeNgjashme.length > 2) {
 }
 ```
 
-## 🛠️ Funksionalitetet Kryesore
+##  Funksionalitetet Kryesore
 
 ### Për Punonjësit
 - **Dorëzimi i Shpenzimeve:** Formular i detajuar me validim
@@ -243,7 +243,7 @@ if (përshkrimeNgjashme.length > 2) {
 └── Settings (Cilësimet)
 ```
 
-## 🧪 Testimi dhe Të Dhënat Fillestare
+##  Testimi dhe Të Dhënat Fillestare
 
 ### Llogaritë e Testimit
 
