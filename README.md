@@ -160,7 +160,7 @@ start-frontend.bat
 6. Middleware verifikon token-in për çdo route të mbrojtur
 ```
 
-## 🔍 Sistemi i Zbulimit të Mashtrimit
+## Sistemi i Zbulimit të Mashtrimit
 
 ### Algoritmat e Kontrollit
 
@@ -209,7 +209,7 @@ if (përshkrimeNgjashme.length > 2) {
 }
 ```
 
-## 🛠️ Funksionalitetet Kryesore
+##  Funksionalitetet Kryesore
 
 ### Për Punonjësit
 - **Dorëzimi i Shpenzimeve:** Formular i detajuar me validim
@@ -243,7 +243,7 @@ if (përshkrimeNgjashme.length > 2) {
 └── Settings (Cilësimet)
 ```
 
-## 🧪 Testimi dhe Të Dhënat Fillestare
+##  Testimi dhe Të Dhënat Fillestare
 
 ### Llogaritë e Testimit
 
@@ -258,11 +258,6 @@ if (përshkrimeNgjashme.length > 2) {
 - Username: `bob_johnson` | Password: `Employee123!`
 - Username: `alice_wilson` | Password: `Employee123!`
 
-### Të Dhënat e Testimit
-Sistemi krijon automatikisht:
-- 50+ shpenzime të ndryshme
-- Shpenzime të sinjalizuara për testim
-- Shpenzime të miratuara/refuzuara
-- Të dhëna të ndryshme statistikore
+
 
 
