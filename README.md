@@ -258,11 +258,6 @@ if (përshkrimeNgjashme.length > 2) {
 - Username: `bob_johnson` | Password: `Employee123!`
 - Username: `alice_wilson` | Password: `Employee123!`
 
-### Të Dhënat e Testimit
-Sistemi krijon automatikisht:
-- 50+ shpenzime të ndryshme
-- Shpenzime të sinjalizuara për testim
-- Shpenzime të miratuara/refuzuara
-- Të dhëna të ndryshme statistikore
+
 
 
