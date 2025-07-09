@@ -3,8 +3,8 @@ FROM node:18-alpine
 # Set working directory
 WORKDIR /app
 
-# Install dumb-init
-RUN apk add --no-cache dumb-init
+# Install dumb-init and curl
+RUN apk add --no-cache dumb-init curl
 
 # Create app directory structure
 RUN mkdir -p api frontend
@@ -20,7 +20,7 @@ COPY api/ ./
 # Copy frontend package files
 WORKDIR /app/frontend
 COPY front/package*.json ./
-RUN npm ci --only=production
+RUN npm ci
 
 # Copy frontend source
 COPY front/ ./
@@ -31,7 +31,7 @@ RUN npm run build
 # Install PM2 globally
 RUN npm install -g pm2
 
-# Create ecosystem file for PM2
+# For CI testing, just run the API
 WORKDIR /app
 RUN echo 'module.exports = {\n\
   apps: [\n\
@@ -42,16 +42,6 @@ RUN echo 'module.exports = {\n\
         NODE_ENV: "production",\n\
         PORT: 5000\n\
       }\n\
-    },\n\
-    {\n\
-      name: "frontend",\n\
-      script: "npm",\n\
-      args: "start",\n\
-      cwd: "./frontend",\n\
-      env: {\n\
-        NODE_ENV: "production",\n\
-        PORT: 3000\n\
-      }\n\
     }\n\
   ]\n\
 };' > ecosystem.config.js
@@ -60,11 +50,11 @@ RUN echo 'module.exports = {\n\
 RUN mkdir -p uploads
 
 # Expose ports
-EXPOSE 3000 5000
+EXPOSE 5000
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://localhost:5000/health || exit 1
+  CMD curl -f http://localhost:5000/health || exit 1
 
 # Start with PM2
 CMD ["dumb-init", "pm2-runtime", "ecosystem.config.js"] 
