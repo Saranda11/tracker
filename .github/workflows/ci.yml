@@ -226,23 +226,30 @@ jobs:
 
       - name: Test Docker image
         run: |
+          # List available images
+          docker images
+          
+          # Run the container
           docker run --name test-container -d \
             -e MONGODB_URI=mongodb://localhost:27017/expense-tracker-test \
             -e JWT_SECRET=test-secret \
-            -e NODE_ENV=test \
+            -e NODE_ENV=production \
             -e PORT=5000 \
-            --network host \
+            -p 5000:5000 \
             expense-tracker:test
 
           # Wait for container to start
-          sleep 30
+          sleep 20
+
+          # Check container logs
+          docker logs test-container
 
           # Test health endpoint
           curl -f http://localhost:5000/health || exit 1
 
           # Cleanup
-          docker stop test-container
-          docker rm test-container
+          docker stop test-container || true
+          docker rm test-container || true
 
   code-quality:
     name: Code Quality Analysis
