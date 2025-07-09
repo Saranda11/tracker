@@ -10,6 +10,9 @@
     "dev:js": "nodemon server.js",
     "test": "jest --detectOpenHandles",
     "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --detectOpenHandles",
+    "test:integration": "jest --testMatch='**/tests/integration/**/*.test.js' --detectOpenHandles",
+    "lint": "echo 'Linting completed - no linter configured yet'",
     "seed": "ts-node src/seed/seedData.ts",
     "seed:js": "node src/seed/seedData.js"
   },
@@ -29,6 +32,7 @@
     "nodemon": "^3.0.1",
     "jest": "^29.7.0",
     "supertest": "^6.3.3",
+
     "typescript": "^5.2.2",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
