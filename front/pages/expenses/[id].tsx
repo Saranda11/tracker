@@ -48,6 +48,7 @@ const ExpenseDetailsPage: React.FC = () => {
     if (id && isAuthenticated) {
       fetchExpense();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, isAuthenticated]);
 
   const fetchExpense = async () => {

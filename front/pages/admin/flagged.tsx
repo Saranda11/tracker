@@ -45,6 +45,7 @@ const FlaggedExpensesPage: React.FC = () => {
     if (isAuthenticated && isAdmin) {
       fetchFlaggedExpenses();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated, isAdmin, currentPage, filterCategory, filterDateRange]);
 
   const fetchFlaggedExpenses = async () => {

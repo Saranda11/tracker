@@ -54,6 +54,7 @@ const ExpensesPage: React.FC = () => {
     if (isAuthenticated) {
       fetchExpenses();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated, currentPage, filterStatus, filterCategory]);
 
   const fetchExpenses = async () => {

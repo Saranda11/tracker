@@ -133,7 +133,7 @@ const LoginPage: React.FC = () => {
 
           <div className="text-center">
             <Link href="/register" className="font-medium text-primary-600 hover:text-primary-500">
-              Don't have an account? Sign up
+              Don&apos;t have an account? Sign up
             </Link>
           </div>
         </form>

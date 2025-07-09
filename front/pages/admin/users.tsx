@@ -37,6 +37,7 @@ const AdminUsersPage: React.FC = () => {
     if (isAuthenticated && isAdmin) {
       fetchUsers();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated, isAdmin, currentPage, filterRole, filterActive]);
 
   const fetchUsers = async () => {

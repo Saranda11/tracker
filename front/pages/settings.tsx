@@ -58,7 +58,7 @@ const SettingsPage: React.FC = () => {
 
     try {
       await authApi.updateProfile(formData);
-      await updateUser();
+      updateUser(formData);
       toast.success("Profile updated successfully");
     } catch (error: any) {
       console.error("Error updating profile:", error);
